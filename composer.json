@@ -1,5 +1,5 @@
 {
-    "name": "jeffwhitfield/silverstripe-bootstrap-theme",
+    "name": "makreig/silverstripe-bootstrap-theme",
     "description": "A SilverStripe Bootstrap theme that incorporates HTML5 Boilerplate, Twitter Bootstrap, and Font Awesome",
     "type": "silverstripe-theme",
     "keywords": ["silverstripe", "theme"],

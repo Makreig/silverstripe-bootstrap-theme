@@ -3,8 +3,8 @@
 		<legend>$Legend</legend>
 	<% end_if %>
 
-	<% loop FieldList %>
-		<% if ColumnCount %>
+	<% loop $FieldList %>
+		<% if $ColumnCount %>
 			<div class="col-lg-{$ColumnCount} $FirstLast">
 				$Field
 			</div>
