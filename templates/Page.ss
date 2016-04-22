@@ -7,12 +7,49 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<% base_tag %>
     <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
 	$MetaTags(false)
     <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
     <link rel="shortcut icon" href="{$ThemeDir}/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="{$ThemeDir}/icons/apple-touch-icon.png">
+	<meta property="og:title" content="{$Title}" />
+	
+	<% if $SiteConfig.Title %>
+		<meta property="og:site_name" content="{$SiteConfig.Title}"/>
+	<% end_if %>
+	
+	<% if $Content %>
+		<meta property="og:description" content="{$Content.FirstParagraph}" />
+	<% end_if %>
+	
+	<% if $AbsoluteLink %>
+		<meta property="og:url" content="{$AbsoluteLink}" />
+	<% end_if %>
+	
+	<% if $SummaryImage %>
+		<meta property="og:image" content="{$BaseHref}{$SummaryImage.SetWidth(550).FileName}" />
+	<% else_if $Image %>
+		<meta property="og:image" content="{$BaseHref}{$Image.SetWidth(550).FileName}" />
+	<% else_if $Images.exists %>
+		<meta property="og:image" content="{$BaseHref}{$Images.first.SetWidth(550).FileName}" />
+	<% else_if $Parent.SummaryImage %>
+		<meta property="og:image" content="{$BaseHref}{$Parent.SummaryImage.SetWidth(550).FileName}" />
+	<% else_if $SiteConfig.Logo %>
+		<meta property="og:image" content="{$BaseHref}{$SiteConfig.Logo.SetWidth(550).FileName}" />
+	<% end_if %>
+
+	<link rel="icon" sizes="16x16" href="{$ThemeDir}/icons/icon-16.png" />
+	<link rel="icon" sizes="32x32" href="{$ThemeDir}/icons/icon-32.png" />
+	<link rel="icon" sizes="48x48" href="{$ThemeDir}/icons/icon-48.png" />
+	<link rel="icon" sizes="64x64" href="{$ThemeDir}/icons/icon-64.png" />
+	<link rel="icon" sizes="128x128" href="{$ThemeDir}/icons/icon-128.png" />
+	<link rel="icon" sizes="196x196" href="{$ThemeDir}/icons/icon-196.png" />
+
+	<link rel="apple-touch-icon" href="{$ThemeDir}/icons/icon-60.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="{$ThemeDir}/icons/icon-76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="{$ThemeDir}/icons/icon-120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="{$ThemeDir}/icons/icon-152.png">
     <script>
     themedir = '{$ThemeDir}';
     </script>
