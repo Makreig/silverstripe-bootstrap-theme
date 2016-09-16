@@ -53,6 +53,7 @@
     <script>
     themedir = '{$ThemeDir}';
     </script>
+	$LoadThemeAssets
     <script src="{$ThemeDir}/bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
