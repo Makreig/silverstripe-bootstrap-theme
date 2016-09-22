@@ -4,8 +4,9 @@
 	<div class="controls">
 		$Field
 	</div>
-	<% if Message %><span class="help-block $MessageType">$Message</span><% end_if %>
-</div>
+	<% if $RightTitle %><label class="pull-right text-right" for="$ID"><small>$RightTitle</small></label><% end_if %>
+	<% if $Message %><span class="message $MessageType">$Message</span><% end_if %>
+	<% if $Description %><span class="description">$Description</span><% end_if %></div></div>
 <% else %>
         $Field
 <% end_if %>
