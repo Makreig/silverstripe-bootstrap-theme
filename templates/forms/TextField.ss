@@ -1,1 +1,1 @@
-<input class="form-control" $AttributesHTML />
+<input $addExtraClass('form-control').AttributesHTML />
