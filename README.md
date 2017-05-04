@@ -42,6 +42,7 @@ Lastly, you'll need to update your default Page class (`/mysite/code/Page.php`) 
             'site.js',
             array(
                 $ThemeDir.'/javascript/libs.js',
+                $ThemeDir.'/bower_components/modernizr/modernizr.js',
                 $ThemeDir.'/bower_components/bootstrap/js/affix.js',
                 $ThemeDir.'/bower_components/bootstrap/js/alert.js',
                 $ThemeDir.'/bower_components/bootstrap/js/button.js',
@@ -61,6 +62,33 @@ Lastly, you'll need to update your default Page class (`/mysite/code/Page.php`) 
 ```
 
 **Note: Pay careful attention to the version of jQuery being loaded in the Requirements! By default, it's set to the version of jQuery that was current at the time this add-on was last updated. If you need to change it, be sure to change it in your `init()` method to match whatever version you are loading up with Bower.**
+
+Alternatively, if using the LoadThemAssets module, simply add the following to your config.yml
+
+...
+LoadThemeAssets:
+  assets:
+    bata:
+      css:
+        - css/site.css
+      js:
+        - bower_components/jquery/dist/jquery.js
+        - bower_components/modernizr/modernizr.js
+        - javascript/libs.js
+        - bower_components/bootstrap/js/affix.js
+        - bower_components/bootstrap/js/alert.js
+        - bower_components/bootstrap/js/button.js
+        - bower_components/bootstrap/js/carousel.js
+        - bower_components/bootstrap/js/collapse.js
+        - bower_components/bootstrap/js/dropdown.js
+        - bower_components/bootstrap/js/modal.js
+        - bower_components/bootstrap/js/tooltip.js
+        - bower_components/bootstrap/js/popover.js
+        - bower_components/bootstrap/js/scrollspy.js
+        - bower_components/bootstrap/js/tab.js
+        - bower_components/bootstrap/js/transition.js
+        - javascript/main.js
+... 
 
 When the site environment is in *live* mode, all CSS files are combined and saved to `/themes/{$ThemeDir}/_requirements/site.css`. Javascript is combined/compressed to `/themes/{$ThemeDir}/_requirements/site.js`. It is recommended that you add any further javascript and CSS files here to ensure they're properly optimized for better performance. Keep in mind that only javascript receives any compression. While CSS files are concatenated, you'll need to compress the CSS files yourself or use something the like the [Minify CSS Module](https://github.com/nathancox/silverstripe-minify) to compress CSS files on the fly.
 
